@@ -1,290 +1,312 @@
-# Инструкция по установке и запуску Telegram-бота для напоминаний
+⏰ Telegram Reminder Bot with aiogram 3
 
-Этот файл содержит подробные инструкции по установке и запуску Telegram-бота для управления напоминаниями. Инструкции доступны как для Windows, так и для Linux.
+Never forget an important task again! This bot helps you set reminders directly in Telegram, ensuring you stay on top of your schedule.
+Whether it’s a meeting, workout, or daily habit, this bot will remind you right on time!
 
-## СОДЕРЖАНИЕ:
-1. [Установка и запуск на Windows](#windows)
-2. [Установка и запуск на Linux](#linux)
-3. [Общие инструкции](#общие-инструкции)
-4. [Возможные проблемы](#возможные-проблемы)
+✅ What does it do?
+
+ • 📅 Allows users to set one-time or recurring reminders
+ • 🔔 Sends notifications exactly when you need them
+ • 📋 Lists and manages existing reminders
+ • 🛠️ Built with aiogram 3 for fast and efficient performance
+
+🔧 Features
+
+✅ Easy-to-use commands for setting reminders
+✅ Customizable notifications for personal or work tasks
+✅ Reliable and precise scheduling
+
+📩 Want to organize your time effectively?
+
+Contact me on Telegram, and I’ll help you set up this bot to improve your productivity! 🚀
+
+# Instructions for installing and launching a Telegram bot for reminders
+
+This file contains detailed instructions for installing and running a Telegram bot for managing reminders. The instructions are available for both Windows and Linux.
+
+## CONTENTS:
+1. [Install and run on Windows](#windows)
+2. [Install and run on Linux](#linux)
+3. [General instructions](#general-instructions)
+4. [Possible problems] (#possible-problems)
 
 ---
 
 <a name="windows"></a>
-## УСТАНОВКА И ЗАПУСК НА WINDOWS
+## INSTALL AND RUN ON WINDOWS
 
-### Шаг 1: Установка Python 3.11
+### Step 1: Install Python 3.11
 
-⚠️ **ВАЖНО**: Не рекомендуется устанавливать Python 3.13 или выше, так как с ними могут возникнуть проблемы при установке зависимостей бота.
+IMPORTANT**: It is not recommended to install Python 3.13 or higher, as they may cause problems when installing bot dependencies.
 
-1. Скачайте Python 3.11:
-   - Перейдите на сайт https://www.python.org/downloads/
-   - Найдите и нажмите на ссылку "Python 3.11.x" (например, Python 3.11.7)
-   - Нажмите на кнопку "Download"
+1. Download Python 3.11:
+- Go to the website https://www.python.org/downloads /
+- Find and click on the link "Python 3.11.x" (for example, Python 3.11.7)
+- Click on the "Download" button
 
-2. Установите Python:
-   - Запустите скачанный файл (например, python-3.11.7-amd64.exe)
-   - **ОБЯЗАТЕЛЬНО** установите галочку "Add Python 3.11 to PATH" внизу окна установщика
-   - Нажмите "Install Now" и дождитесь завершения установки
+2. Install Python:
+   - Run the downloaded file (for example, python-3.11.7-amd64.exe )
+- **BE SURE TO** check the box "Add Python 3.11 to PATH" at the bottom of the installer window
+   - Click "Install Now" and wait for the installation to complete
 
-3. Проверьте установку:
-   - Нажмите Win+R, введите "cmd" и нажмите Enter для открытия командной строки
-   - Введите: `python --version`
-   - Вы должны увидеть что-то вроде "Python 3.11.7"
+3. Check the installation:
+   - Press Win+R, type "cmd" and press Enter to open the command prompt
+   - Enter: `python --version`
+   - You should see something like "Python 3.11.7"
 
-### Шаг 2: Подготовка папки и файлов бота
+### Step 2: Preparing the bot folder and files
 
-1. Создайте папку для бота:
-   - Откройте командную строку (Win+R, введите "cmd", нажмите Enter)
-   - Введите команды:
+1. Create a folder for the bot:
+   - Open the command prompt (Win+R, type "cmd", press Enter)
+   - Enter the commands:
    ```
    mkdir C:\TelegramBot
    cd C:\TelegramBot
    ```
 
-2. Создайте файл бота:
-   - В командной строке введите:
+2. Create a bot file:
+   - In the command prompt, type:
    ```
    notepad reminder_bot.py
-   ```
-   - Скопируйте и вставьте код бота в открывшийся Блокнот
-   - Сохраните файл (Ctrl+S)
+``
+- Copy and paste the bot code into the Notebook that opens
+   - Save the file (Ctrl+S)
 
-### Шаг 3: Установка необходимых библиотек
+### Step 3: Install the necessary libraries
 
-1. Установите библиотеку aiogram:
-   - В командной строке (убедитесь, что вы находитесь в папке C:\TelegramBot) введите:
+1. Install the aiogram library:
+- On the command line (make sure you are in the folder C:\TelegramBot ) enter:
    ```
    pip install aiogram==2.25.1
-   ```
-   - Дождитесь завершения установки
+``
+- Wait for the installation to complete
 
-### Шаг 4: Настройка и запуск бота
+### Step 4: Setting up and launching the bot
 
-1. Получите токен для бота:
-   - Откройте Telegram и найдите @BotFather
-   - Отправьте команду `/newbot`
-   - Следуйте инструкциям: укажите имя бота и его username
-   - Сохраните токен, который вам пришлет BotFather
+1. Get a token for the bot:
+   - Open Telegram and find @BotFather
+   - Send the `/newbot` command
+   - Follow the instructions: specify the bot's name and username
+. Save the token that BotFather will send you.
 
-2. Настройте бота:
-   - Откройте файл reminder_bot.py (команда `notepad reminder_bot.py`)
-   - Найдите строку `TOKEN = "YOUR_BOT_TOKEN"`
-   - Замените YOUR_BOT_TOKEN на ваш токен от BotFather (сохраняя кавычки)
-   - Сохраните файл (Ctrl+S)
+2. Set up the bot:
+   - Open the file reminder_bot.py (the `notepad' command reminder_bot.py `)
+   - Find the string `TOKEN = "YOUR_BOT_TOKEN"`
+- Replace YOUR_BOT_TOKEN with your BotFather token (keeping the quotes)
+- Save the file (Ctrl+S)
 
-3. Запустите бота:
-   - В командной строке введите:
+3. Launch the bot:
+   - In the command prompt, type:
    ```
    python reminder_bot.py
-   ```
-   - Если всё правильно, вы увидите сообщения о запуске бота
+``
+- If everything is correct, you will see messages about the launch of the bot
 
-4. Создайте файл для удобного запуска бота в будущем:
-   - Откройте Блокнот и введите:
+4. Create a file for convenient launch of the bot in the future:
+- Open Notepad and enter:
    ```
    @echo off
    cd /d C:\TelegramBot
    python reminder_bot.py
    pause
-   ```
-   - Сохраните как "start_bot.bat" в папке C:\TelegramBot
-   - Теперь для запуска бота достаточно дважды кликнуть на этот файл
+   ``
+- Save as "start_bot.bat" in the folder C:\TelegramBot
+   - Now it's enough to double-click on this file to launch the bot.
 
 ---
 
 <a name="linux"></a>
-## УСТАНОВКА И ЗАПУСК НА LINUX
+## INSTALL AND RUN ON LINUX
 
-### Шаг 1: Установка Python 3.11
+### Step 1: Install Python 3.11
 
-⚠️ **ВАЖНО**: Рекомендуется использовать Python 3.11, а не более новые версии, для избежания проблем с зависимостями.
+IMPORTANT**: It is recommended to use Python 3.11 rather than newer versions to avoid dependency issues.
 
-1. Обновите список пакетов и установите необходимые инструменты:
+1. Update the package list and install the necessary tools:
    ```
    sudo apt update
    sudo apt install software-properties-common -y
    ```
 
-2. Добавьте репозиторий с Python 3.11:
-   ```
+2. Add a repository with Python 3.11:
+``
    sudo add-apt-repository ppa:deadsnakes/ppa -y
    sudo apt update
    ```
 
-3. Установите Python 3.11 и pip:
-   ```
+3. Install Python 3.11 and pip:
+``
    sudo apt install python3.11 python3.11-venv python3-pip -y
    ```
 
-4. Проверьте установку:
-   ```
+4. Check the installation:
+``
    python3.11 --version
    ```
-   Вы должны увидеть "Python 3.11.x"
+   You should see "Python 3.11.x"
 
-### Шаг 2: Подготовка папки и файлов бота
+### Step 2: Preparing the bot folder and files
 
-1. Создайте папку для бота:
+1. Create a folder for the bot:
    ```
    mkdir ~/telegram-bot
    cd ~/telegram-bot
    ```
 
-2. Создайте файл бота:
+2. Create a bot file:
    ```
    nano reminder_bot.py
-   ```
-   - Скопируйте и вставьте код бота в открывшийся редактор
-   - Нажмите Ctrl+O для сохранения, затем Enter, затем Ctrl+X для выхода
+``
+- Copy and paste the bot code into the editor that opens
+   - Press Ctrl+O to save, then Enter, then Ctrl+X to exit
 
-### Шаг 3: Создание виртуального окружения и установка зависимостей
+### Step 3: Create a virtual environment and install dependencies
 
-1. Создайте виртуальное окружение:
+1. Create a virtual environment:
    ```
    python3.11 -m venv venv
    ```
 
-2. Активируйте виртуальное окружение:
+2. Activate the virtual environment:
    ```
    source venv/bin/activate
    ```
-   После активации в начале строки терминала должно появиться (venv)
+   After activation, (venv) should appear at the beginning of the terminal line
 
-3. Установите библиотеку aiogram:
+3. Install the aiogram library:
    ```
    pip install aiogram==2.25.1
    ```
 
-### Шаг 4: Настройка и запуск бота
+### Step 4: Setting up and launching the bot
 
-1. Получите токен для бота:
-   - Откройте Telegram и найдите @BotFather
-   - Отправьте команду `/newbot`
-   - Следуйте инструкциям: укажите имя бота и его username
-   - Сохраните токен, который вам пришлет BotFather
+1. Get a token for the bot:
+   - Open Telegram and find @BotFather
+   - Send the `/newbot` command
+   - Follow the instructions: specify the bot's name and username
+. Save the token that BotFather will send you.
 
-2. Настройте бота:
+2. Set up the bot:
    ```
    nano reminder_bot.py
    ```
-   - Найдите строку `TOKEN = "YOUR_BOT_TOKEN"`
-   - Замените YOUR_BOT_TOKEN на ваш токен от BotFather (сохраняя кавычки)
-   - Сохраните файл (Ctrl+O, Enter, Ctrl+X)
+   - Find the string `TOKEN = "YOUR_BOT_TOKEN"`
+- Replace YOUR_BOT_TOKEN with your BotFather token (keeping the quotes)
+- Save the file (Ctrl+O, Enter, Ctrl+X)
 
-3. Запустите бота:
+3. Launch the bot:
    ```
    python reminder_bot.py
    ```
 
-4. Создайте скрипт для удобного запуска:
-   ```
+4. Create a script for easy launch:
+``
    nano start_bot.sh
    ```
-   Введите:
+   Enter:
    ```
    #!/bin/bash
    cd ~/telegram-bot
    source venv/bin/activate
    python reminder_bot.py
    ```
-   Сохраните (Ctrl+O, Enter, Ctrl+X) и сделайте скрипт исполняемым:
-   ```
+   Save (Ctrl+O, Enter, Ctrl+X) and make the script executable:
+``
    chmod +x start_bot.sh
    ```
 
-5. Для запуска бота в будущем используйте:
+5. To launch the bot in the future, use:
    ```
    ./start_bot.sh
    ```
 
-### Шаг 5 (дополнительно): Настройка автозапуска на Linux
+### Step 5 (optional): Setting up Autorun on Linux
 
-1. Создайте файл службы systemd:
+1. Create a systemd service file:
    ```
    sudo nano /etc/systemd/system/telegram-bot.service
    ```
 
-2. Введите следующее содержимое (замените "ваше_имя_пользователя" на ваше имя пользователя Linux):
-   ```
+2. Enter the following contents (replace "your_user name" with your Linux username):
+``
    [Unit]
    Description=Telegram Reminder Bot
    After=network.target
 
    [Service]
-   User=ваше_имя_пользователя
-   WorkingDirectory=/home/ваше_имя_пользователя/telegram-bot
-   ExecStart=/home/ваше_имя_пользователя/telegram-bot/venv/bin/python /home/ваше_имя_пользователя/telegram-bot/reminder_bot.py
-   Restart=always
+   User=your user_name
+   WorkingDirectory=/home/your user_name/telegram-bot
+   ExecStart=/home/your username/telegram-bot/venv/bin/python /home/ваше_имя_пользователя/telegram-bot/reminder_bot.py
+Restart=always
 
    [Install]
    WantedBy=multi-user.target
    ```
 
-3. Сохраните файл (Ctrl+O, Enter, Ctrl+X)
+3. Save the file (Ctrl+O, Enter, Ctrl+X)
 
-4. Включите и запустите службу:
-   ```
+4. Turn on and start the service:
+``
    sudo systemctl enable telegram-bot
    sudo systemctl start telegram-bot
    ```
 
-5. Проверьте статус службы:
+5. Check the service status:
    ```
    sudo systemctl status telegram-bot
    ```
 
 ---
 
-<a name="общие-инструкции"></a>
-## ОБЩИЕ ИНСТРУКЦИИ ПО ИСПОЛЬЗОВАНИЮ БОТА
+<a name="general instructions"></a>
+## GENERAL INSTRUCTIONS FOR USING THE BOT
 
-1. Найдите своего бота в Telegram по username, который вы указали при создании
+1. Find your Telegram bot by the username you specified when creating it.
 
-2. Отправьте команду `/start` для начала работы
+2. Send the `/start` command to get started
 
-3. Создание напоминаний:
-   - Отправьте сообщение в формате: "Напомни через X часов/минут: текст напоминания"
-   - Например: "Напомни через 1 час: позвонить маме"
-   - Или: "Купить молоко через 30 минут"
+3. Create reminders:
+   - Send a message in the format: "Remind me in X hours/minutes: reminder text"
+- For example: "Remind me in 1 hour: call mom"
+   - Or: "Buy milk in 30 minutes"
 
-4. Проверка существующих напоминаний:
-   - Отправьте команду `/list`
+4. Checking existing reminders:
+- Send the command `/list`
 
 ---
 
-<a name="возможные-проблемы"></a>
-## ВОЗМОЖНЫЕ ПРОБЛЕМЫ И ИХ РЕШЕНИЯ
+<a name="possible-problems"></a>
+## POSSIBLE PROBLEMS AND THEIR SOLUTIONS
 
-### Проблемы с установкой библиотек на Windows
+### Problems installing libraries on Windows
 
-1. **Ошибки прав доступа**:
-   - Запустите командную строку от имени администратора: кликните правой кнопкой на меню Пуск > Командная строка (администратор)
-   - Повторите команду установки: `pip install aiogram==2.25.1`
+1. **Access rights errors**:
+- Run the command prompt as an administrator: right-click on the Start menu > Command prompt (administrator)
+- Repeat the installation command: `pip install aiogram==2.25.1`
 
-2. **Проблемы с кодировкой в командной строке**:
-   - Введите команду: `chcp 1251` или `chcp 65001`
-   - Или используйте PowerShell вместо командной строки
+2. **Encoding problems on the command line**:
+- Enter the command: `chcp 1251` or `chcp 65001`
+   - Or use PowerShell instead of the command line
 
-3. **Ошибки при установке зависимостей с Rust**:
-   - Это одна из причин, почему мы рекомендуем aiogram 2.25.1 вместо 3.x
-   - Если вам всё же нужна версия 3.x, сначала установите Rust с официального сайта https://www.rust-lang.org/tools/install
+3. **Errors when installing dependencies with Rust**:
+- This is one of the reasons why we recommend aiogram 2.25.1 instead of 3.x
+- If you still need version 3.x, first install Rust from the official website https://www.rust-lang.org/tools/install
 
-### Проблемы с запуском на Linux
+### Problems running on Linux
 
-1. **Нет прав на выполнение скрипта**:
-   ```
+1. **No script execution rights**:
+``
    chmod +x start_bot.sh
    ```
 
-2. **Проблемы с зависимостями**:
-   ```
+2. **Dependency issues**:
+``
    pip install --upgrade pip
    pip install aiogram==2.25.1
    ```
 
-3. **Проблемы с виртуальным окружением**:
-   ```
+3. **Problems with the virtual environment**:
+``
    deactivate
    rm -rf venv
    python3.11 -m venv venv
@@ -292,18 +314,18 @@
    pip install aiogram==2.25.1
    ```
 
-### Бот не отвечает
+### The bot is not responding
 
-1. Убедитесь, что бот запущен и в консоли нет сообщений об ошибках
-2. Проверьте, правильно ли вы ввели токен в файле reminder_bot.py
-3. Проверьте подключение к интернету
+1. Make sure that the bot is running and there are no error messages in the console.
+2. Check if you entered the token correctly in the file. reminder_bot.py
+3. Check your internet connection
 
-### Напоминания не приходят
+### Reminders are not coming
 
-1. Убедитесь, что бот запущен и работает
-2. Проверьте, что время на компьютере установлено правильно
-3. Проверьте список напоминаний командой `/list`
+1. Make sure that the bot is up and running
+2. Check that the time on the computer is set correctly.
+3. Check the reminder list with the `/list` command
 
 ---
 
-Если у вас возникли другие проблемы, попробуйте перезапустить бота или свяжитесь с разработчиком.
+If you have any other problems, try restarting the bot or contact the developer.
